@@ -17,5 +17,8 @@ pip install -r requirements.txt
 pytest -v
 ```
 
-Stage 1 contains a small min-max normalization component and unit tests for
-normal, constant, and empty input.
+## CI quality gates
+
+The GitHub Actions workflow runs on pushes and pull requests targeting `main`.
+It installs the pinned dependencies, runs Ruff, executes unit tests, and checks
+that the deterministic Iris model reaches at least 0.90 accuracy.
